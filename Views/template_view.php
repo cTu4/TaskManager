@@ -5,7 +5,7 @@
     <title>Главная</title>
     <link href="Css/bootstrap.css" rel="stylesheet" >
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="Js/jquery.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jeditable.js/2.0.17/jquery.jeditable.min.js"></script>
