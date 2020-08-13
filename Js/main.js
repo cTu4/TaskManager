@@ -86,17 +86,17 @@ $(document).ready(function () {
                         let name = $('#name')[0].value;
                         let email = $('#email')[0].value;
                         let task  = $('#task')[0].value;
-                        if(name!=='' && email!=='' && task!==''){
+                        if(name!=='' && email!=='' && task!=='' && ValidateEmail(email)){
                             let data = {data:{name:name,email:email,task:task,status:0}};
                             $.ajax({
                                 url:'index.php?r=main/add_data',
                                 type: 'POST',
                                 data: data,
                                 success: function (response){
-                                    console.log((response));
                                     var table = $('#main_table').DataTable();
                                     table.clear().ajax.reload();
                                     $('#add_task').remove();
+                                    alert("You add task!");
                                 }
 
                             });
@@ -111,6 +111,17 @@ $(document).ready(function () {
             }
         ]
     });
+
+    function ValidateEmail(mail)
+    {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+        {
+            return (true)
+        }
+        alert("You have entered an invalid email address!")
+        return (false)
+    }
+
     $('#main_table').on('click', 'td', function(e) {
         let item = $(e.target)[0];
         if(item.cellIndex===2 && admin===true){
