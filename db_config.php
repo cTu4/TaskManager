@@ -1,8 +1,8 @@
 <?php
 
-$host = 'localhost'; // адрес сервера
-$database = 'phone_book'; // имя базы данных
-$user = 'root'; // имя пользователя
-$password = 'ko2ra6t2a'; // пароль
+$host = 'us-cdbr-east-02.cleardb.com'; // адрес сервера
+$database = 'heroku_78c06ec4330d665'; // имя базы данных
+$user = 'bcde434ef6ce7f'; // имя пользователя
+$password = '	f99d83c0'; // пароль
 
 $mysqli = mysqli_connect($host, $user, $password, $database);
