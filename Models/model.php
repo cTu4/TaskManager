@@ -19,7 +19,11 @@ class Model
     }
     public function add_data($row){
         $sql='insert into tasks values(null,?,?,?,?)';
-        $this->db->prepare($sql)->execute([$row['name'],$row['email'],$row['task'],$row['status']]);
+        $task = htmlspecialchars($row['task']);
+        $name = htmlspecialchars($row['name']);
+        $email = htmlspecialchars($row['email']);
+
+        $this->db->prepare($sql)->execute([$name,$email,$task,$row['status']]);
     }
     public function edit_task($id,$task){
         $sql = "update tasks set task=? where id=?";

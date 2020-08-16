@@ -21,7 +21,10 @@ class Controller_Main extends Controller
         $this->model->edit_task(intval($_POST['id']),$_POST['task']);
     }
     function action_edit_status(){
-        var_dump($_POST);
-        $this->model->edit_status(intval($_POST['id']),$_POST['status']);
+        $status=0;
+        if($_POST['status']==='true'){
+            $status=1;
+        }
+        $this->model->edit_status(intval($_POST['id']),$status);
     }
 }

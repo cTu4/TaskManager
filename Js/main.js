@@ -1,13 +1,22 @@
 $(document).ready(function () {
-    var admin = true;
+    var admin = false;
     $('#main_table').DataTable({
         ajax:{
             url: "index.php?r=main/get_data",
             type: 'POST'
         },
         "drawCallback": function( settings ) {
-            $('[type="checkbox"]').click(function (){
-                alert('fff'); // при нажатии сделать обработчик смены статуса в бд
+            $('[type="checkbox"]').click(function (e){
+                if (admin){
+                    let table = $('#main_table').DataTable();
+                    let tr = $(e.target).closest('tr');
+                    let id = table.row(tr).data().id;
+                    $.ajax({
+                        url: 'index.php?r=main/edit_status',
+                        type: 'POST',
+                        data: {id:id,status:$(e.target).prop('checked')}
+                    })
+                }
             });
         },
         "pagingType": "simple_numbers",
@@ -53,7 +62,8 @@ $(document).ready(function () {
                         let password = $('#password')[0].value;
                         if(name==='admin' && password==='123' && name!=='' && password!==''){
                             admin=true;
-                            $('#main_table input').prop('disabled',false);
+                            var table = $('#main_table').DataTable();
+                            table.clear().ajax.reload();
                             $('#admin_form').remove();
                         }
                         else{
@@ -84,25 +94,27 @@ $(document).ready(function () {
                         let name = $('#name')[0].value;
                         let email = $('#email')[0].value;
                         let task  = $('#task')[0].value;
-                        if(name!=='' && email!=='' && task!=='' && ValidateEmail(email)){
-                            let data = {data:{name:name,email:email,task:task,status:0}};
-                            $.ajax({
-                                url:'index.php?r=main/add_data',
-                                type: 'POST',
-                                data: data,
-                                success: function (response){
-                                    var table = $('#main_table').DataTable();
-                                    table.clear().ajax.reload();
-                                    $('#add_task').remove();
-                                    alert("You add task!");
-                                }
+                        if(ValidateEmail(email)){
+                            if(name!=='' && email!=='' && task!=='' ){
+                                let data = {data:{name:name,email:email,task:task,status:0}};
+                                $.ajax({
+                                    url:'index.php?r=main/add_data',
+                                    type: 'POST',
+                                    data: data,
+                                    success: function (response){
+                                        var table = $('#main_table').DataTable();
+                                        table.clear().ajax.reload();
+                                        toastr.success('You add task!',function (){
+                                            $('#add_task').remove();
+                                        });
+                                    }
 
-                            });
+                                });
+                            }
+                            else {
+                                alert('Check input!');
+                            }
                         }
-                        else {
-                            alert('Check input!');
-                        }
-
                     });
                     $('#add_task').dialog();
                 }
@@ -130,7 +142,9 @@ $(document).ready(function () {
             fa_check.click(function (e){
                 let task = $('#task')[0].value;
                 let table = $('#main_table').DataTable();
-                let id = table.row().data().id;
+                let tr = $(e.target).closest('tr');
+                let id = table.row(tr).data().id;
+                console.log(id,task);
                 $.ajax({
                    url: 'index.php?r=main/edit_task',
                    type: 'POST',

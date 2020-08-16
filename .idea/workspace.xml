@@ -32,7 +32,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc3c0ef2-4eb8-4859-9a0f-aa29b7c33ca5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/db_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TaskManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TaskManager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/controller_main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/template_view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +79,7 @@
       <updated>1597307031166</updated>
       <workItem from="1597307032289" duration="48675000" />
       <workItem from="1597571642862" duration="10034000" />
+      <workItem from="1597606215208" duration="4154000" />
     </task>
     <servers />
   </component>
@@ -101,6 +108,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1597343343615">
