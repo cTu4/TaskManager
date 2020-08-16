@@ -1,0 +1,18 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"cc3c0ef2-4eb8-4859-9a0f-aa29b7c33ca5\" name=\"Default Changelist\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ComposerSettings\">\n    <execution />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"1g2K1JaY0HbN30o7wV1XzXBu1kP\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"cc3c0ef2-4eb8-4859-9a0f-aa29b7c33ca5\" name=\"Default Changelist\" comment=\"\" />\n      <created>1597307031166</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1597307031166</updated>\n      <workItem from=\"1597307032289\" duration=\"48675000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"789\" y=\"478\" width=\"399\" height=\"149\" key=\"NewPhpFileDialog\" timestamp=\"1597343343615\">\n      <screen x=\"67\" y=\"27\" width=\"1853\" height=\"1053\" />\n    </state>\n    <state x=\"789\" y=\"478\" width=\"399\" height=\"149\" key=\"NewPhpFileDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053\" timestamp=\"1597343343615\" />\n    <state x=\"684\" y=\"291\" width=\"618\" height=\"522\" key=\"find.popup\" timestamp=\"1597354307130\">\n      <screen x=\"67\" y=\"27\" width=\"1853\" height=\"1053\" />\n    </state>\n    <state x=\"684\" y=\"291\" width=\"618\" height=\"522\" key=\"find.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053\" timestamp=\"1597354307130\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision a6c5d28e6e3509f013c6f379df9a1698a23ee71b)
++++ .idea/workspace.xml	(date 1597357546850)
+@@ -34,7 +34,7 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1597307031166</updated>
+-      <workItem from="1597307032289" duration="48675000" />
++      <workItem from="1597307032289" duration="49275000" />
+     </task>
+     <servers />
+   </component>
