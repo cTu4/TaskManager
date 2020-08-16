@@ -7,7 +7,7 @@ $(document).ready(function () {
         },
         "drawCallback": function( settings ) {
             $('[type="checkbox"]').click(function (){
-                alert('aaa'); // при нажатии сделать обработчик смены статуса в бд
+                alert('fff'); // при нажатии сделать обработчик смены статуса в бд
             });
         },
         "pagingType": "simple_numbers",

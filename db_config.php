@@ -2,7 +2,7 @@
 class DB{
 
     const USER = "root";
-    const PASS = '1111';
+    const PASS = 'ko2ra6t2a';
     const HOST = "localhost";
     const DB   = "phone_book";
 
