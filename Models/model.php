@@ -1,27 +1,32 @@
 <?php
 class Model
 {
+    protected $db = null;
+
+    public function __construct() {
+        $this->db = DB::connToDB();
+    }
     public function get_data()
     {
-        include 'db_config.php';
-        $sql = 'select name,email,task,status from tasks';
-        $data = mysqli_query($mysqli, $sql);
-        $data = mysqli_fetch_all($data);
+        $sql = 'select id,name,email,task,status from tasks';
+        $data=$this->db->query($sql);
         $result = [];
         $result['data']=[];
         foreach ($data as $key => $val){
-            array_push($result['data'],['name'=>$val[0],'email'=>$val[1],'task'=>$val[2],'status'=>$val[3]]);
+            array_push($result['data'],['id'=>$val[0],'name'=>$val[1],'email'=>$val[2],'task'=>$val[3],'status'=>$val[4]]);
         }
         return json_encode($result);
     }
     public function add_data($row){
-        include 'db_config.php';
-        $sql="INSERT INTO tasks VALUES (null, '".$row['name']."','".$row['email']."','".$row['task']."',".$row['status'].")";
-        $data = mysqli_query($mysqli, $sql);
+        $sql='insert into tasks values(null,?,?,?,?)';
+        $this->db->prepare($sql)->execute([$row['name'],$row['email'],$row['task'],$row['status']]);
     }
-    public function edit_task($row){
-        include 'db_config.php';
-        $sql="INSERT INTO tasks VALUES (null, '".$row['name']."','".$row['email']."','".$row['task']."',".$row['status'].")";
-        $data = mysqli_query($mysqli, $sql);
+    public function edit_task($id,$task){
+        $sql = "update tasks set task=? where id=?";
+        $this->db->prepare($sql)->execute([$task,$id]);
+    }
+    public function edit_status($id,$status){
+        $sql = "update tasks set status=? where id=?";
+        $this->db->prepare($sql)->execute([$status,$id]);
     }
 }

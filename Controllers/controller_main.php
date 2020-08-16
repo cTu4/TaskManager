@@ -17,8 +17,11 @@ class Controller_Main extends Controller
         $this->model->add_data($_POST['data']);
         return (($this->model->get_data()));
     }
-    function action_edit_task($row){
-        $this->model->edit_task($_POST['data']);
-        return (($this->model->get_data()));
+    function action_edit_task(){
+        $this->model->edit_task(intval($_POST['id']),$_POST['task']);
+    }
+    function action_edit_status(){
+        var_dump($_POST);
+        $this->model->edit_status(intval($_POST['id']),$_POST['status']);
     }
 }

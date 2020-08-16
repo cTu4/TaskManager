@@ -1,13 +1,17 @@
 $(document).ready(function () {
-    var admin = false;
+    var admin = true;
     $('#main_table').DataTable({
         ajax:{
             url: "index.php?r=main/get_data",
             type: 'POST'
         },
+        "drawCallback": function( settings ) {
+            $('[type="checkbox"]').click(function (){
+                alert('aaa'); // при нажатии сделать обработчик смены статуса в бд
+            });
+        },
         "pagingType": "simple_numbers",
         "lengthMenu": [3,3],
-
         "columns":[
             {
                 "data": "name"
@@ -21,15 +25,10 @@ $(document).ready(function () {
             {
                 "data": 'status',
                 "render": function ( data, type, row ) {
-                    if(data==='1'){
-                        return '<input type="checkbox" disabled checked>'
-                    }
-                    else{
-                        return '<input type="checkbox" disabled>'
-                    }
-                    if(admin){
-                        $('#main_table input').prop('disabled',false);
-                    }
+                    let disable = admin? '': 'disabled';
+                    let check = data==='1' ? ' checked':'';
+                    let checkbox = "<input type='checkbox' "+disable+check+">";
+                    return checkbox;
                 }
             }
         ],
@@ -52,7 +51,6 @@ $(document).ready(function () {
                     $('.field button').click(function (){
                         let name = $('#name')[0].value;
                         let password = $('#password')[0].value;
-                        console.log(password);
                         if(name==='admin' && password==='123' && name!=='' && password!==''){
                             admin=true;
                             $('#main_table input').prop('disabled',false);
@@ -129,8 +127,17 @@ $(document).ready(function () {
             let fa_check =$('.check');
             fa_check.css('margin','10px','cursor','pointer');
             fa_check.css('cursor','pointer');
-            fa_check.click(function (){
-                item.innerHTML=$('#task')[0].value;
+            fa_check.click(function (e){
+                let task = $('#task')[0].value;
+                let table = $('#main_table').DataTable();
+                let id = table.row().data().id;
+                $.ajax({
+                   url: 'index.php?r=main/edit_task',
+                   type: 'POST',
+                   data: {id:id,task:task}
+                });
+                table.clear().ajax.reload();
+
             })
         }
 
