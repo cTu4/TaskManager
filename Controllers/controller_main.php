@@ -5,17 +5,42 @@ class Controller_Main extends Controller
     {
         $this->model = new model();
         $this->view = new View();
+        session_start();
     }
-    function action_index($admin=false)
+    function action_index()
     {
-        $this->view->generate('main_view.php', 'template_view.php',$admin);
+        $this->view->generate('main_view.php', 'template_view.php');
+    }
+    function action_login()
+    {
+        $_SESSION['login'] = $_POST['login'];
+        $_SESSION['password'] = $_POST['password'];
+        echo $this->model->login( $_SESSION['login'],$_SESSION['password']);
+    }
+    function action_CheckAdmin()
+    {
+        //var_dump($_SESSION);
+        if(isset($_SESSION['login']) && isset($_SESSION['password'])){
+            //var_dump($this->model->login( $_SESSION['login'],$_SESSION['password']));
+            echo $this->model->login( $_SESSION['login'],$_SESSION['password']);
+        }
+        else{
+            echo false;
+        }
+
+    }
+    function action_logout()
+    {
+       if(isset($_SESSION['login']) && isset($_SESSION['password'])){
+           unset($_SESSION['login'],$_SESSION['password']);
+       }
+
     }
     function action_get_data(){
         echo (($this->model->get_data()));
     }
     function action_add_data(){
         $this->model->add_data($_POST['data']);
-        return (($this->model->get_data()));
     }
     function action_edit_task(){
         $this->model->edit_task(intval($_POST['id']),$_POST['task']);
