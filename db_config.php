@@ -1,10 +1,10 @@
 <?php
 class DB{
 
-    const USER = "root";
-    const PASS = 'ko2ra6t2a';
-    const HOST = "localhost";
-    const DB   = "phone_book";
+    const USER = "bcde434ef6ce7f";
+    const PASS = 'f99d83c0';
+    const HOST = "us-cdbr-east-02.cleardb.com";
+    const DB   = "heroku_78c06ec4330d665";
 
     public static function connToDB() {
 
@@ -18,19 +18,3 @@ class DB{
 
     }
 }
-
-//$host = 'us-cdbr-east-02.cleardb.com'; // адрес сервера
-//$database = 'heroku_78c06ec4330d665'; // имя базы данных
-//$user = 'bcde434ef6ce7f'; // имя пользователя
-
-
-//$password = 'f99d83c0'; // пароль heroku
-$password = '1111'; // пароль notebook
-//$password = 'ko2ra6t2a'; // пароль pk
-
-
-$host = 'localhost'; // адрес сервера
-$database = 'phone_book'; // имя базы данных
-$user = 'root'; // имя пользователя
-
-$mysqli = mysqli_connect($host, $user, $password, $database);

@@ -53,8 +53,9 @@ CREATE TABLE `tasks` (
   `email` varchar(20) NOT NULL,
   `task` text NOT NULL,
   `status` tinyint(1) NOT NULL,
+  `edit` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +64,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (1,'Mark','mark.a.w@yandex.ru','Rename somethings',0),(2,'Mark2','mark.e.re@yandex.ru','Delete somethings',0),(3,'Alex','alex.a.a@yandex.ru','Repeat bussnes punch',1),(15,'asdas','asd@aaaa.ru','asfasf',0);
+INSERT INTO `tasks` VALUES (1,'Mark','mark.a.w@yandex.ru','Rename somethings a',1,1),(2,'Mark2','mark.e.re@yandex.ru','Delete somethings',1,0),(3,'Alex','alex.a.a@yandex.ru','Create new job',1,0),(15,'asdas','asd@aaaa.ru','Create cat and dog',1,0),(16,'test','test@test.com','test job',0,0),(17,'test','tesd@ya.ru','aaaaqqq',1,1),(18,'aaaa','aaa@ya.ru','test',1,1),(19,'qq','qqqq@ya.ru','qqqq',0,0),(20,'aaa','as@ya.ruy','Test',1,1),(21,'asdf','aa@ty.ww','aaa',0,0),(22,'aaa','aaa@ttt.ry','asddd',0,1),(23,'aaa','asas@rt.er','aaa',0,1),(24,'aaa','asd@ty.ty','aaa',0,0),(25,'aaaa','ass@rt.ee','wwww',0,0),(26,'asds','res@dg.rr','aaa',0,0),(27,'aaa','aaaa@er.ru','alert(\'aaaa\')',0,0),(28,'aaa','aaa@rt.er','[img]http://blabla.ru/1.jpg/dynsrc=javascript:alert()[/img]',0,0),(29,'aaa','sdsd@at.ru','[img]Â»Â»>Â«script>http://blabla.ru/1.jpg/dynsrc=javascript:alert()[/img]',0,0),(32,'testXSS','xss@ya.ru','aaaa&lt;script&gt;alert(\'aaa\')&lt;/script&gt;',0,0),(33,'test','test@yan.ru','aaaaaaaaaaaa',0,0);
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,11 +77,10 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `surname` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `patr` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `login` varchar(20) NOT NULL,
+  `password` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Петр','Иванова','Олегович'),(2,'Андрей','Куков','Дмитриевич'),(3,'Кирилл','Иванов','ахахаха'),(6,'Алексей','Куйбышев','Владимирович'),(7,'Дмитрий','Троев','Ильич'),(8,'Иван','Иванов','Иванович');
+INSERT INTO `users` VALUES (1,'admin','$2y$10$ars.z9DzfgM3RF2iU7/i/eoowQvR5oHSE8XRGuVXbz7hmsBlU11xG');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -102,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-14  1:17:23
+-- Dump completed on 2020-08-17 21:14:22
