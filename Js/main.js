@@ -1,6 +1,5 @@
 $(document).ready(function () {
     var admin;
-    var btn='';
     var btn_Log_in ={
         text: 'Log in',
         action: ActionButton
@@ -28,8 +27,6 @@ $(document).ready(function () {
         url:'index.php?r=main/CheckAdmin',
         success:function (response){
             admin=!!response;
-            console.log(admin);
-
             $('#main_table').DataTable({
                 ajax:{
                     url: "index.php?r=main/get_data",
@@ -177,7 +174,6 @@ $(document).ready(function () {
                 let table = $('#main_table').DataTable();
                 let tr = $(e.target).closest('tr');
                 let id = table.row(tr).data().id;
-                console.log(id,task);
                 $.ajax({
                    url: 'index.php?r=main/edit_task',
                    type: 'POST',
@@ -211,7 +207,6 @@ $(document).ready(function () {
                     type: 'POST',
                     data: {login: name, password: password},
                     success: function (response){
-                        //console.log(!!response);
                         if(!!response){
                             admin=true;
                             var table = $('#main_table').DataTable();
@@ -238,17 +233,6 @@ $(document).ready(function () {
         $('#admin_form').dialog();
     }
 
-function CheckAdmin(){
-        $.ajax({
-        url:'index.php?r=main/CheckAdmin',
-        type: 'POST',
-        success: function (response){
-            console.log("response "+response);
-            admin = !!Number(response);
-        }
-        });
-        console.log("admin - "+admin);
-}
 
 
 });

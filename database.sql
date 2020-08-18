@@ -64,7 +64,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (1,'Mark','mark.a.w@yandex.ru','Rename somethings a',1,1),(2,'Mark2','mark.e.re@yandex.ru','Delete somethings',1,0),(3,'Alex','alex.a.a@yandex.ru','Create new job',1,0),(15,'asdas','asd@aaaa.ru','Create cat and dog',1,0),(16,'test','test@test.com','test job',0,0),(17,'test','tesd@ya.ru','aaaaqqq',1,1),(18,'aaaa','aaa@ya.ru','test',1,1),(19,'qq','qqqq@ya.ru','qqqq',0,0),(20,'aaa','as@ya.ruy','Test',1,1),(21,'asdf','aa@ty.ww','aaa',0,0),(22,'aaa','aaa@ttt.ry','asddd',0,1),(23,'aaa','asas@rt.er','aaa',0,1),(24,'aaa','asd@ty.ty','aaa',0,0),(25,'aaaa','ass@rt.ee','wwww',0,0),(26,'asds','res@dg.rr','aaa',0,0),(27,'aaa','aaaa@er.ru','alert(\'aaaa\')',0,0),(28,'aaa','aaa@rt.er','[img]http://blabla.ru/1.jpg/dynsrc=javascript:alert()[/img]',0,0),(29,'aaa','sdsd@at.ru','[img]Â»Â»>Â«script>http://blabla.ru/1.jpg/dynsrc=javascript:alert()[/img]',0,0),(32,'testXSS','xss@ya.ru','aaaa&lt;script&gt;alert(\'aaa\')&lt;/script&gt;',0,0),(33,'test','test@yan.ru','aaaaaaaaaaaa',0,0);
+INSERT INTO `tasks` VALUES (1,'Mark','mark.a.w@yandex.ru','Rename somethings a',1,1),(2,'Mark2','mark.e.re@yandex.ru','Delete somethings',1,0),(3,'Alex','alex.a.a@yandex.ru','Create new job',1,0);
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-17 21:14:22
+-- Dump completed on 2020-08-17 21:23:07
